@@ -1,3 +1,4 @@
+
 from tkinter import *
 from math import sqrt
 def sqrt_(a,b,c):
@@ -5,18 +6,9 @@ def sqrt_(a,b,c):
     if D >= 0:
         x1 = (-b + sqrt(D)) / (2*a)
         x2 = (-b - sqrt(D)) / (2*a)
-        text = "Дискриминант: %s \nX1 -: %s \nX2 -: %s \n"%(D, x1, x2)        
+        text = "Discriminant: %s \nX1 -: %s \nX2 -: %s \n"%(D, x1, x2)        
     else:
-        text = "Дискриминант: %s \n" % D 
-    return text
-def sqrt_(a,b,c):
-    D = b*b - 4*a*c
-    if D >= 0:
-        x1 = (-b + sqrt(D)) / (2*a)
-        x2 = (-b - sqrt(D)) / (2*a)
-        text = "Дискриминант: %s \nX1 -: %s \nX2 -: %s \n"%(D, x1, x2)        
-    else:
-        text = "Дискриминант: %s \n  Нет корней у данного уравнения" % D 
+        text = "Discriminant: %s \n There are no solutions for this!" % D 
     return text
 def numbers(value):
     otvet.delete("0.0","end")
@@ -28,15 +20,28 @@ def values():
         c_val = float(c.get())
         numbers(sqrt_(a_val, b_val, c_val))
     except ValueError:
-        inserter("Введите 3 значения!")
+        inserter("3 meanings!")
 aken = Tk()
-aken.title("Калькулятор квадратного уравнения")
+aken.title("discriminant calculator")
 aken.minsize(400,325)
 aken.resizable(width=False, height=False)
-button_=Button(aken,text="Решить",font="Arial 16",width=10,bg="#458B00",fg="#000080",relief=RAISED)
-button_.pack(side=RIGHT)
-kvad=Label(aken,text="Решение квадратного уравнения",height=3,width=30,font="Arial 16",fg="#458B00",bg="lightblue",relief="solid")
-kvad.place(x=20,y=25)
-a=Entry(width=30,font="Arial 16",fg="#458B00",bg="lightblue",justify="left")
-
+lbl=Label(aken,text="Discriminant solver",height=3,width=30,font="Arial 20",fg="green",bg="lightblue",relief=FLAT)#.pack()
+lbl.pack()
+txt=Entry(aken,width=4,font="Arial 20",fg="green",bg="lightblue",justify=CENTER)
+txt.pack(side=LEFT)
+lb2=Label(aken,text="  x**2+  ",height=3,width=6,font="Arial 20",fg="green",relief=FLAT)#.pack()
+lb2.pack(side=LEFT)
+txt2=Entry(aken,width=4,font="Arial 20",fg="green",bg="lightblue",justify=CENTER)
+txt2.pack(side=LEFT)
+lb3=Label(aken,text="  x+  ",height=3,width=6,font="Arial 20",fg="green",relief=FLAT)#.pack()
+lb3.pack(side=LEFT)
+txt3=Entry(aken,width=4,font="Arial 20",fg="green",bg="lightblue",justify=CENTER)
+txt3.pack(side=LEFT)
+lb4=Label(aken,text="  =0  ",height=3,width=6,font="Arial 20",fg="green",relief=FLAT)#.pack()
+lb4.pack(side=LEFT)
+nupp=Button(aken,text="Solve!",font="Arial 20",width=15,bg="green",fg="black",relief=RAISED)
+nupp.pack(side=LEFT)
+nupp.bind("<Button-1>",sqrt_)
+lb5=Label(aken,text="Get",height=3,width=40,font="Arial 20",fg="black",bg="yellow",relief="solid")#.pack()
+lb5.place(x=80,y=360)
 aken.mainloop()
