@@ -118,25 +118,59 @@ def prillid():
     plt.xlabel('x')
     plt.grid(True)
     plt.show()
-def vihmavari():
-    x1=np.arange(-9, -1.5, 0.5)
+def babochka():
+    x1 = np.arange(-9, -0.5, 0.5)#min max step
     y1=-(1/8)*(x1+9)**2+8
-    x2=np.arange(1, 9.5, 0.5)
+    x2 = np.arange(1, 9.5, 0.5)#min max step
     y2=-(1/8)*(x2-9)**2+8
-    x3=np.arange(-9, -8.5, 0.5)
-    y3=7(x3+8)**2+1
-    x4=np.arange(8, 9.5, 0.5)
-    y4=7(x4-8)**2+1
-    x5=np.arange(-8, -1.5, 0.5)
-    y5=(1/49)*(x5+1)**2
-    x6=np.arange(1,8.5,0.5)
-    y6=(1/49)*(x6-1)**2
-    x7=np.arange(-8, -1.5, 0.5)
-    y7=-(4/49)*(x+1)**2
+    x3 = np.arange(-9, -7.5, 0.5)#min max step
+    y3=7*(x3+8)**2+1
+    x4 = np.arange(8, 9.5, 0.5)#min max step
+    y4=7*(x4-8)**2+1
+    x5 = np.arange(-8, -0.5, 0.5)#min max step
+    y5=1/49*(x5+1)**2
+    x6 = np.arange(1, 8.5, 0.5)#min max step
+    y6=1/49*(x6-1)**2
+    x7 = np.arange(-8, -0.5, 0.5)#min max step
+    y7=-4/49*(x7+1)**2
     x8=np.arange(1, 8.5, 0.5)
-    y8=-(4/49)*(x-1)**2
-    x9=np.arange(-8, -2.5, 0.5)
-    y9=
+    y8=-4/49*(x8-1)**2
+    x9=np.arange(-8, -1.5, 0.5)
+    y9=1/3*(x9+5)**2-7
+    x10=np.arange(2, 8.5, 0.5)
+    y10=1/3*(x10-5)**2-7
+    x11=np.arange(-2, -0.5, 0.5)
+    y11=-2*(x11+1)**2-2
+    x12=np.arange(1, 2.5, 0.5)
+    y12=-2*(x12-1)**2-2
+    x13=np.arange(-1, 1.5, 0.5)
+    y13=-4*x13**2+2
+    x14=np.arange(-1, 1.5, 0.5)
+    y14=4*x14**2-6
+    x15=np.arange(-2, 0.5, 0.5)
+    y15=-1.5*x15+2
+    x16=np.arange(0, 2.5, 0.5)
+    y16=1.5*x16+2
+    fig = plt.figure()
+    plt.plot(x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7,x8,y8,x9,y9,x10,y10,x11,y11,x12,y12,x13,y13,x14,y14,x15,y15,x16,y16)
+    plt.title('Бабочка')
+    plt.ylabel('y')
+    plt.xlabel('x')
+    plt.grid(True)
+    plt.show()
+def vihmavari():
+    x1 = np.arange(-12, 12.5, 0.5)
+    y1 = (-1/18)*x1*x1+12
+    x2 = np.arange(-4, 4.5, 0.5)
+    y2 = (-1/8)*x2*x2+6
+    x3 = np.arange(-12, -3.5, 0.5)
+    y3 = (-1/8)*(x3+8)**2+6
+    x4 = np.arange(4, 12.5, 0.5)
+    y4 = (-1/8)*(x4-8)**2+6
+    x5 = np.arange(-4, 0.2, 0.5)
+    y5 = 2*(x5+3)**2-9
+    x6 = np.arange(-4, 0.7, 0.5)
+    y6 = 1.5*(x6+3)**2-10
     fig = plt.figure()
     plt.plot(x1, y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6)
     plt.title('Зонтик')
@@ -151,8 +185,10 @@ def figura():
         kala()
     elif valik==2:
         prillid()
-    else:
+    elif valik==3:
         vihmavari()
+    else:
+        zontik()
 aken=Tk()
 aken.geometry("620x200")
 aken.title("Квадратные уравнения")
@@ -188,8 +224,10 @@ var=IntVar()
 r1=Radiobutton(f2,text="Кит", variable=var,var=1, font="Calibri 26",command=kala)
 r2=Radiobutton(f2,text="Очки", variable=var,var=2,font="Calibri 26",command=prillid)
 r3=Radiobutton(f2,text="Зонтик", variable=var,var=3,font="Calibri 26",command=vihmavari)
+r4=Radiobutton(f2,text="Зонтик", variable=var,var=3,font="Calibri 26",command=babochka)
 r1.pack()
 r2.pack()
 r3.pack()
+r4.pack()
 #btn.bind("<Button-1>",lahenda)
 aken.mainloop()
