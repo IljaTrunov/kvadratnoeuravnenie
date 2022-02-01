@@ -69,6 +69,34 @@ def veel():
     else:
         aken.geometry(str(aken.winfo_width())+"x"+str(aken.winfo_height()-200))
         btn_veel.config(text="Увеличить окно")
+def konn():
+    x1 = np.arange(0, 9.5, 0.5)
+    y1=(2/27)*x1*x1-3
+    x2 = np.arange(-10, 0.5, 0.5)
+    y2=0.04*x2*x2-3
+    x3 = np.arange(-9, -2.5, 0.5)
+    y3=(2/9)*(x3+6)**2+1
+    x4 = np.arange(-3, 9.5, 0.5)
+    y4=(-1/12)*(x4-3)**2+6
+    x5 = np.arange(5, 9, 0.5)
+    y5=(1/9)*(x5-5)**2+2
+    x6 = np.arange(5, 8.5, 0.5)
+    y6=(1/8)*(x6-7)**2+1.5
+    x7 = np.arange(-13, -8.5, 0.5)
+    y7=(-0.75)*(x7+11)**2+6
+    x8 = np.arange(-15, -12.5, 0.5)
+    y8=(-0.5)*(x8+13)**2+3
+    x9 = np.arange(-15, -10, 0.5)
+    y9=[1]*len(x9)
+    x10 = np.arange(3, 4, 0.5)
+    y10=[3]*len(x10)
+    fig = plt.figure()
+    plt.plot(x1, y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7,x8,y8,x9,y9,x10,y10)
+    plt.title('Лягушка')
+    plt.ylabel('y')
+    plt.xlabel('x')
+    plt.grid(True)
+    plt.show()
 def kala():
     x1 = np.arange(0, 9.5, 0.5)
     y1=(2/27)*x1*x1-3
@@ -114,25 +142,25 @@ def prillid():
     y7=-0.5*x7**2+1.5
     fig = plt.figure()
     plt.plot(x1, y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7)
-    plt.title('O4ki')
+    plt.title('Oчки')
     plt.ylabel('y')
     plt.xlabel('x')
     plt.grid(True)
     plt.show()
 def babochka():
-    x1 = np.arange(-9, -0.5, 0.5)#min max step
+    x1 = np.arange(-9, -0.5, 0.5)
     y1=-(1/8)*(x1+9)**2+8
-    x2 = np.arange(1, 9.5, 0.5)#min max step
+    x2 = np.arange(1, 9.5, 0.5)#
     y2=-(1/8)*(x2-9)**2+8
-    x3 = np.arange(-9, -7.5, 0.5)#min max step
+    x3 = np.arange(-9, -7.5, 0.5)
     y3=7*(x3+8)**2+1
-    x4 = np.arange(8, 9.5, 0.5)#min max step
+    x4 = np.arange(8, 9.5, 0.5)
     y4=7*(x4-8)**2+1
-    x5 = np.arange(-8, -0.5, 0.5)#min max step
+    x5 = np.arange(-8, -0.5, 0.5)
     y5=1/49*(x5+1)**2
-    x6 = np.arange(1, 8.5, 0.5)#min max step
+    x6 = np.arange(1, 8.5, 0.5)
     y6=1/49*(x6-1)**2
-    x7 = np.arange(-8, -0.5, 0.5)#min max step
+    x7 = np.arange(-8, -0.5, 0.5)
     y7=-4/49*(x7+1)**2
     x8=np.arange(1, 8.5, 0.5)
     y8=-4/49*(x8-1)**2
@@ -188,8 +216,10 @@ def figura():
         prillid()
     elif valik==3:
         vihmavari()
-    else:
+    elif valik==4:
         babochka()
+    else:
+        konn()
 aken=Tk()
 aken.geometry("620x200")
 aken.title("Квадратные уравнения")
@@ -225,10 +255,12 @@ var=IntVar()
 r1=Radiobutton(f2,text="Кит", variable=var,var=1, font="Calibri 26",command=kala)
 r2=Radiobutton(f2,text="Очки", variable=var,var=2,font="Calibri 26",command=prillid)
 r3=Radiobutton(f2,text="Зонтик", variable=var,var=3,font="Calibri 26",command=vihmavari)
-r4=Radiobutton(f2,text="Зонтик", variable=var,var=3,font="Calibri 26",command=babochka)
+r4=Radiobutton(f2,text="Лягушка", variable=var,var=4,font="Calibri 26",command=konn)
+r5=Radiobutton(f2,text="Бабочка", variable=var,var=5,font="Calibri 26",command=babochka)
 r1.pack()
 r2.pack()
 r3.pack()
 r4.pack()
+r5.pack()
 #btn.bind("<Button-1>",lahenda)
 aken.mainloop()
