@@ -1,3 +1,4 @@
+
 from tkinter import *
 from math import *
 import matplotlib.pyplot as plt
@@ -188,7 +189,7 @@ def figura():
     elif valik==3:
         vihmavari()
     else:
-        zontik()
+        babochka()
 aken=Tk()
 aken.geometry("620x200")
 aken.title("Квадратные уравнения")
