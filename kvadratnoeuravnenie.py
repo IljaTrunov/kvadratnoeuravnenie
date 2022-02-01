@@ -97,23 +97,23 @@ def kala():
     plt.grid(True)
     plt.show()
 def prillid():
-    x1=np.arange(-9, -1.5, 0.5)
-    y1=-(1/16)*(x1+5)*(x1+5)+2
-    x2=np.arange(1, 9.5, 0.5)
-    y2=-(1/16)*(x2-5)*(x2-5)+2
-    x3=np.arange(-9,-1.5, 0.5)
-    y3=(1/4)*(x3+5)*(x3+5)-3
-    x4=np.arange(1, 9.5, 0.5)
-    y4=(1/4)*(x4-5)*(x4-5)-3
-    x5=np.arange(-9, -6.5, 0.5)
+    x1=np.arange(-9,-0.5,0.5)
+    y1=-1/16*(x1+5)**2+2
+    x2=np.arange(1,9.5,0.5)
+    y2=-1/16*(x2-5)**2+2
+    x3=np.arange(-9,-0.5,0.5)
+    y3=1/4*(x3+5)**2-3
+    x4=np.arange(1,9.5,0.5)
+    y4=1/4*(x4-5)**2-3
+    x5=np.arange(-9,-5.5,0.5)
     y5=-(x5+7)**2+5
-    x6=np.arange(6, 9.5, 0.5)
+    x6=np.arange(6,9.5,0.5)
     y6=-(x6-7)**2+5
-    x7=np.arange(-1, 1.5, 0.5)
-    y7=-(0.5*x7)**2+1.5
+    x7=np.arange(-1,1.5,0.5)
+    y7=-0.5*x7**2+1.5
     fig = plt.figure()
     plt.plot(x1, y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7)
-    plt.title('Очки')
+    plt.title('O4ki')
     plt.ylabel('y')
     plt.xlabel('x')
     plt.grid(True)
@@ -131,6 +131,12 @@ def vihmavari():
     y5=(1/49)*(x5+1)**2
     x6=np.arange(1,8.5,0.5)
     y6=(1/49)*(x6-1)**2
+    x7=np.arange(-8, -1.5, 0.5)
+    y7=-(4/49)*(x+1)**2
+    x8=np.arange(1, 8.5, 0.5)
+    y8=-(4/49)*(x-1)**2
+    x9=np.arange(-8, -2.5, 0.5)
+    y9=
     fig = plt.figure()
     plt.plot(x1, y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6)
     plt.title('Зонтик')
@@ -179,9 +185,9 @@ btn_g.pack(side=LEFT)
 btn_veel=Button(f2,text="Увеличить окно", font="Calibri 26",bg="yellow",command=veel)
 btn_veel.pack(side=TOP)
 var=IntVar()
-r1=Radiobutton(f2,text="Кит", variable=var,var=1, font="Calibri 26",command=figura)
-r2=Radiobutton(f2,text="Очки", variable=var,var=2,font="Calibri 26",command=figura)
-r3=Radiobutton(f2,text="Зонтик", variable=var,var=3,font="Calibri 26",command=figura)
+r1=Radiobutton(f2,text="Кит", variable=var,var=1, font="Calibri 26",command=kala)
+r2=Radiobutton(f2,text="Очки", variable=var,var=2,font="Calibri 26",command=prillid)
+r3=Radiobutton(f2,text="Зонтик", variable=var,var=3,font="Calibri 26",command=vihmavari)
 r1.pack()
 r2.pack()
 r3.pack()
