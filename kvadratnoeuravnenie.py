@@ -189,8 +189,6 @@ def figura():
         vihmavari()
     elif valik==4:
         babochka()
-    else:
-        konn()
 aken=Tk()
 aken.geometry("620x200")
 aken.title("Квадратные уравнения")
